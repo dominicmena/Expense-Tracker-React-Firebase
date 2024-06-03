@@ -28,8 +28,8 @@ export const ExpenseTracker = () => {
       transactionType,
     });
 
-    setDescription("");
-    setTransactionAmount("");
+    setDescription(" ");
+    setTransactionAmount(" ");
   };
 
   const signUserOut = async () => {
