@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
+import {getAuth, GoogleAuthProvider} from 'firebase/auth'
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,4 +17,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app)
+export const provider = new GoogleAuthProvider
 const analytics = getAnalytics(app);
+
+
+// CLI commands: 
+//firebase login
+//firebase init
+//firebase deploy
