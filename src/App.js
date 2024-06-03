@@ -19,3 +19,7 @@ function App() {
 }
 
 export default App;
+
+
+// Project Console: https://console.firebase.google.com/project/expense-tracker-5e835/overview
+//Hosting URL: https://expense-tracker-5e835.web.app
