@@ -24,7 +24,7 @@ export const useGetTransactions = () => {
         let docs = [];
 
         snapshot.forEach((doc) => {
-            const data = doc.data
+            const data = doc.data()
             const id = doc.id
 
             docs.push({...data, id})
