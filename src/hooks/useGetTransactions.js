@@ -6,6 +6,7 @@ import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useGetTransactions = () => {
   const [transactions, setTransactions] = useState([]);
+  const [transactionTotals, setTransactionTotals] = useState([]);
 
   const transactionCollectionRef = collection(db, "transactions");
   const { userID } = useGetUserInfo();
@@ -22,15 +23,30 @@ export const useGetTransactions = () => {
     unsubscribe = onSnapshot(queryTransactions, (snapshot) => {
 
         let docs = [];
+        let totalIncome = 0;
+        let totalExpenses = 0
 
         snapshot.forEach((doc) => {
             const data = doc.data()
             const id = doc.id
 
             docs.push({...data, id})
+
+            if (data.transactionType === "expense") {
+                totalExpenses += Number(data.transactionAmount)
+            } else {
+                totalIncome += Number(data.transactionAmount)
+            }
         })
 
         setTransactions(docs)
+
+        let balance = totalIncome - totalExpenses
+        setTransactionTotals({
+            balance,
+            expenses: totalExpenses,
+            income: totalIncome
+        })
       })
     } catch (err) {
       console.error(err);
@@ -42,5 +58,5 @@ export const useGetTransactions = () => {
   useEffect(() => {
     getTransactions();
   }, []);
-  return { transactions };
+  return { transactions, transactionTotals };
 };
