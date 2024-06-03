@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAddTransaction } from "../../hooks/useAddTransaction";
 import { useGetTransactions } from "../../hooks/useGetTransactions";
+import './styles.css'
 
 export const ExpenseTracker = () => {
   const { addTransaction } = useAddTransaction();
