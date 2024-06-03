@@ -2,6 +2,11 @@ import { useAddTransaction } from "../../hooks/useAddTransaction";
 
 export const ExpenseTracker = () => {
   const { addTransaction } = useAddTransaction();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    addTransaction();
+  };
   return (
     <>
       <div className="expense-tracker">
@@ -21,16 +26,14 @@ export const ExpenseTracker = () => {
               <p>$0.00</p>
             </div>
           </div>
-          <form className="add-transaction">
+          <form className="add-transaction" onSubmit={onSubmit}>
             <input type="text" placeholder="Description" required />
             <input type="number" placeholder="Amount" required />
             <input type="radio" id="expense" value="expense" />
             <label htmlFor="expense">Expense</label>
             <input type="radio" id="income" value="income" />
             <label htmlFor="income">Income</label>
-            <button type="submit" onSubmit={addTransaction}>
-              Add Transaction
-            </button>
+            <button type="submit">Add Transaction</button>
           </form>
         </div>
       </div>
