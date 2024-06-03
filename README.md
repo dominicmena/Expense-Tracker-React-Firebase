@@ -1,5 +1,5 @@
 Expense Tracker App Development
-Showcases the development of an Expense Tracker application utilizing ReactJS, NodeJS, MySQL, Firebase, and Firestore. The project encompasses various stages, from initial setup to deployment, demonstrating proficiency in full-stack development.
+This repository showcases the development of an Expense Tracker application utilizing ReactJS, NodeJS, MySQL, Firebase, and Firestore. The project encompasses various stages, from initial setup to deployment, demonstrating proficiency in full-stack development.
 
 Project Highlights:
 
