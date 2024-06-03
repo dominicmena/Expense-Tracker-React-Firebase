@@ -3,6 +3,10 @@ import { useAddTransaction } from "../../hooks/useAddTransaction";
 export const ExpenseTracker = () => {
   const { addTransaction } = useAddTransaction();
 
+  const [description, setDescription] = useState("");
+  const [transactionAmount, setTransactionAmount] = useState(0);
+  const [transactionType, setTransactionType] = useState("expense");
+
   const onSubmit = async (e) => {
     e.preventDefault();
     addTransaction({
