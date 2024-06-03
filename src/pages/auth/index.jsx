@@ -6,9 +6,13 @@ export const Auth = () => {
     const signInWithGoogle = async () => {
         const results = await signInWithPopup(auth, provider)
         const authInfo = {
-            userID: results.user.uid //creating an object with a value path to the uid (check console.log(results) for path)
+            userID: results.user.uid,
+            name: results.user.displayName,
+            profilePhoto: results.user.photoURL,
+            isAuth: true,
+             //creating an object with a value path to the uid (check console.log(results) for path)
         }
-        localStorage.setItem("auth")
+        localStorage.setItem("auth", JSON.stringify(authInfo))
     }
 
   return (
