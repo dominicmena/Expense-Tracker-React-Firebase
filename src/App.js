@@ -1,11 +1,18 @@
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {Auth} from "./pages/auth/index"
 
-import './App.css';
 
 function App() {
-  return (
+  return ( 
     <div className="App">
-      
-    </div>
+
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Auth />}/>
+      </Routes>
+    </Router>
+  </div>
   );
 }
 
