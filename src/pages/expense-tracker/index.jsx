@@ -5,7 +5,11 @@ export const ExpenseTracker = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    addTransaction();
+    addTransaction({
+      description: "Haircut",
+      transactionAmount: 22,
+      transactionType: "expense",
+    });
   };
   return (
     <>
