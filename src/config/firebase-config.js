@@ -26,3 +26,5 @@ const analytics = getAnalytics(app);
 //firebase login
 //firebase init
 //firebase deploy
+
+//collection = tables, document = rows
